@@ -1,0 +1,14 @@
+{
+  "name": "cloudflare-playground",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@cloudflare/pages-plugin-sentry": "^1.1.1"
+  }
+}
