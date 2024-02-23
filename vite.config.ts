@@ -1,27 +1,16 @@
-import pages from '@hono/vite-cloudflare-pages'
-import devServer from '@hono/vite-dev-server'
-import { defineConfig } from 'vite'
+import { fileURLToPath, URL } from 'node:url'
 
-export default defineConfig(({ mode }) => {
-  if (mode === 'client') {
-    return {
-      build: {
-        rollupOptions: {
-          input: './src/client.tsx',
-          output: {
-            entryFileNames: 'static/client.js',
-          },
-        },
-      },
-    }
-  } else {
-    return {
-      plugins: [
-        pages(),
-        devServer({
-          entry: 'src/index.tsx',
-        }),
-      ],
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    vue(),
+  ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
 })
