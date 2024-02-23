@@ -1,15 +1,13 @@
 {
   "name": "cloudflare-playground",
-  "module": "src/index.ts",
   "devDependencies": {
-    "@types/bun": "latest",
-    "bun-plugin-html": "^2.0.0"
+    "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "build": "bun run ./src/index.ts"
+    "build": "bun build ./src/index.ts --outdir=dist"
   },
   "type": "module"
 }
